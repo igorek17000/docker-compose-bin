@@ -35,7 +35,7 @@ jobs:
           for i in $(curl "https://api.github.com/repos/docker/compose/releases" -s | grep "browser_download_url" | awk -F\" '{print $4}')
           do   
             p=${i#*com/}
-            p1=${p1%/*}
+            p1=${p%/*}
             mkdir -p $p1
             wget -P $p1 $i
           done
