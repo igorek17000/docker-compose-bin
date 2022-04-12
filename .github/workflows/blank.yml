@@ -37,7 +37,7 @@ jobs:
             p=${i#*com/}
             p1=${p%/*}
             mkdir -p $p1
-            wget -P $p1 $i
+            wget -q -P $p1 $i
           done
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
